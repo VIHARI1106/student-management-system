@@ -43,7 +43,7 @@ function AddStudent() {
 
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/students', student);
+      await axios.post(`${process.env.REACT_APP_API_URL}/students`, student);
       setToast({ message: 'Student added successfully', type: 'success' });
       setTimeout(() => navigate('/'), 1000);
     } catch (err) {

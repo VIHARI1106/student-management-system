@@ -10,8 +10,7 @@ function StudentList() {
   const [toast, setToast] = useState(null);
 
   useEffect(() => {
-    axios
-      .get('http://localhost:5000/students')
+    axios.get(`${process.env.REACT_APP_API_URL}/students`)
       .then((res) => setStudents(res.data))
       .catch((err) => {
         console.error('Error fetching students:', err);
