@@ -11,7 +11,7 @@ function StudentList() {
 
   useEffect(() => {
     axios
-      .get('https://student-management-system-047f.onrender.com')
+      .get('http://localhost:5000/students')
       .then((res) => setStudents(res.data))
       .catch((err) => {
         console.error('Error fetching students:', err);
