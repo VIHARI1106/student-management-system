@@ -20,7 +20,7 @@ function EditStudent() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/students/${id}`)
+      .get(`https://student-management-system-047f.onrender.com/${id}`)
       .then((res) => {
         const { dob, ...rest } = res.data;
         setStudent({
@@ -45,7 +45,7 @@ function EditStudent() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:5000/students/${id}`, student)
+      .put(`https://student-management-system-047f.onrender.com/${id}`, student)
       .then(() => {
         setToast({ message: 'Student updated successfully', type: 'success' });
         setTimeout(() => navigate('/'), 1000);
@@ -59,7 +59,7 @@ function EditStudent() {
   const handleDelete = () => {
     if (window.confirm('Are you sure you want to delete this student?')) {
       axios
-        .delete(`http://localhost:5000/students/${id}`)
+        .delete(`https://student-management-system-047f.onrender.com/${id}`)
         .then(() => {
           setToast({ message: 'Student deleted successfully', type: 'success' });
           setTimeout(() => navigate('/'), 1000);

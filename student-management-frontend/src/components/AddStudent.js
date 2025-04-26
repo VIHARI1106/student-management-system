@@ -43,7 +43,7 @@ function AddStudent() {
 
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/students', student);
+      await axios.post('https://student-management-system-047f.onrender.com', student);
       setToast({ message: 'Student added successfully', type: 'success' });
       setTimeout(() => navigate('/'), 1000);
     } catch (err) {
